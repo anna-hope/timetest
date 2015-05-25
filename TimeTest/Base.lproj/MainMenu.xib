@@ -664,7 +664,7 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="TimeTest" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+        <window title="TimeTest" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="126"/>
@@ -722,7 +722,7 @@ DQ
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="134" y="225"/>
+            <point key="canvasLocation" x="178" y="93"/>
         </window>
     </objects>
 </document>

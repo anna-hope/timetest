@@ -34,6 +34,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let time = getTime()
         timeField.stringValue = timeFormatter.stringForObjectValue(time.toDateComponents)!
     }
+    
+    func moveOn()
+    {
+        populateTimeField()
+        answerField.backgroundColor = NSColor.greenColor()
+        answerField.stringValue = ""
+        answerField.display()
+        
+        answerCount += 1
+        answerCountField.integerValue = answerCount
+    }
 
     
     @IBAction func checkTime(sender: AnyObject)
@@ -42,17 +53,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let time = TimeInstance(timeString: timeField.stringValue)
         let correctVerbalTime = verbaliseTime(time)
-        let correctShortTime = verbaliseTime(time, short: true)
         
-        if answer == correctVerbalTime || answer == correctShortTime
+        if answer == correctVerbalTime
         {
-            populateTimeField()
-            answerField.backgroundColor = NSColor.greenColor()
-            answerField.stringValue = ""
-            answerField.display()
-            
-            answerCount += 1
-            answerCountField.integerValue = answerCount
+           moveOn()
+        }
+        else if answer == verbaliseTime(time, short: true)
+        {
+            moveOn()
         }
         else
         {
@@ -65,8 +73,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     {
         let time = TimeInstance(timeString: timeField.stringValue)
         let correctVerbalTime = verbaliseTime(time)
+        let correctShortTime = verbaliseTime(time, short: true)
         
-        answerField.stringValue = correctVerbalTime
+        var message = correctVerbalTime
+        if correctVerbalTime != correctShortTime
+        {
+            message += " или \(correctShortTime)"
+        }
+        
+        let tipAlert = NSAlert()
+        tipAlert.alertStyle = NSAlertStyle.InformationalAlertStyle
+        tipAlert.messageText = message
+        tipAlert.beginSheetModalForWindow(window, completionHandler: nil)
     }
     
     

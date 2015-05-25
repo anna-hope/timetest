@@ -22,6 +22,20 @@
 			remoteGlobalIDString = 3A42F0751B112E3600CCC6DC;
 			remoteInfo = TimeTest;
 		};
+		3A4C86CB1B139550009F1D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A4C86A11B13954F009F1D4B;
+			remoteInfo = RussianTimeTest;
+		};
+		3A4C86CD1B139550009F1D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A4C86B61B13954F009F1D4B;
+			remoteInfo = RussianTimeTestTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +48,8 @@
 		3A42F08B1B112E3700CCC6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A42F08C1B112E3700CCC6DC /* TimeTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTestTests.swift; sourceTree = "<group>"; };
 		3A42F0961B112F5D00CCC6DC /* TimeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
+		3A4C86951B1389CC009F1D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RussianTimeTest.xcodeproj; path = RussianTimeTest/RussianTimeTest.xcodeproj; sourceTree = "<group>"; };
 		3A791D181B1279E6002DAE7D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +93,7 @@
 		3A42F0781B112E3600CCC6DC /* TimeTest */ = {
 			isa = PBXGroup;
 			children = (
+				3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */,
 				3A42F07B1B112E3600CCC6DC /* AppDelegate.swift */,
 				3A42F0961B112F5D00CCC6DC /* TimeTest.swift */,
 				3A42F07D1B112E3600CCC6DC /* Images.xcassets */,
@@ -109,6 +126,15 @@
 				3A42F08B1B112E3700CCC6DC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A4C86C71B13954F009F1D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86CC1B139550009F1D4B /* RussianTimeTest.app */,
+				3A4C86CE1B139550009F1D4B /* RussianTimeTestTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +204,12 @@
 			mainGroup = 3A42F06D1B112E3600CCC6DC;
 			productRefGroup = 3A42F0771B112E3600CCC6DC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3A4C86C71B13954F009F1D4B /* Products */;
+					ProjectRef = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3A42F0751B112E3600CCC6DC /* TimeTest */,
@@ -185,6 +217,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3A4C86CC1B139550009F1D4B /* RussianTimeTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = RussianTimeTest.app;
+			remoteRef = 3A4C86CB1B139550009F1D4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A4C86CE1B139550009F1D4B /* RussianTimeTestTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RussianTimeTestTests.xctest;
+			remoteRef = 3A4C86CD1B139550009F1D4B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3A42F0741B112E3600CCC6DC /* Resources */ = {
@@ -238,6 +287,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A42F0801B112E3600CCC6DC /* Base */,
+				3A4C86951B1389CC009F1D4B /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

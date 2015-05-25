@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A1FBAA11B13C14300E17C0F /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1FBAA01B13C14300E17C0F /* TimeTest.swift */; };
+		3A4C86A71B13954F009F1D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86A61B13954F009F1D4B /* AppDelegate.swift */; };
+		3A4C86A91B13954F009F1D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86A81B13954F009F1D4B /* ViewController.swift */; };
+		3A4C86AC1B13954F009F1D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AA1B13954F009F1D4B /* Main.storyboard */; };
+		3A4C86AE1B13954F009F1D4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AD1B13954F009F1D4B /* Images.xcassets */; };
+		3A4C86B11B13954F009F1D4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AF1B13954F009F1D4B /* LaunchScreen.xib */; };
+		3A4C86BD1B13954F009F1D4B /* RussianTimeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86BC1B13954F009F1D4B /* RussianTimeTestTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A4C86B71B13954F009F1D4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A4C86991B13954F009F1D4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A4C86A01B13954F009F1D4B;
+			remoteInfo = RussianTimeTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A1FBAA01B13C14300E17C0F /* TimeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeTest.swift; path = ../../TimeTest.swift; sourceTree = "<group>"; };
+		3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RussianTimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4C86A51B13954F009F1D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4C86A61B13954F009F1D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A4C86A81B13954F009F1D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A4C86AB1B13954F009F1D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A4C86AD1B13954F009F1D4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3A4C86B01B13954F009F1D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RussianTimeTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4C86BB1B13954F009F1D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4C86BC1B13954F009F1D4B /* RussianTimeTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RussianTimeTestTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A4C869E1B13954F009F1D4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4C86B31B13954F009F1D4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A4C86981B13954F009F1D4B = {
+			isa = PBXGroup;
+			children = (
+				3A4C86A31B13954F009F1D4B /* RussianTimeTest */,
+				3A4C86B91B13954F009F1D4B /* RussianTimeTestTests */,
+				3A4C86A21B13954F009F1D4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A4C86A21B13954F009F1D4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */,
+				3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A4C86A31B13954F009F1D4B /* RussianTimeTest */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86A61B13954F009F1D4B /* AppDelegate.swift */,
+				3A4C86A81B13954F009F1D4B /* ViewController.swift */,
+				3A1FBAA01B13C14300E17C0F /* TimeTest.swift */,
+				3A4C86AA1B13954F009F1D4B /* Main.storyboard */,
+				3A4C86AD1B13954F009F1D4B /* Images.xcassets */,
+				3A4C86AF1B13954F009F1D4B /* LaunchScreen.xib */,
+				3A4C86A41B13954F009F1D4B /* Supporting Files */,
+			);
+			path = RussianTimeTest;
+			sourceTree = "<group>";
+		};
+		3A4C86A41B13954F009F1D4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86A51B13954F009F1D4B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A4C86B91B13954F009F1D4B /* RussianTimeTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86BC1B13954F009F1D4B /* RussianTimeTestTests.swift */,
+				3A4C86BA1B13954F009F1D4B /* Supporting Files */,
+			);
+			path = RussianTimeTestTests;
+			sourceTree = "<group>";
+		};
+		3A4C86BA1B13954F009F1D4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C86BB1B13954F009F1D4B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A4C86A01B13954F009F1D4B /* RussianTimeTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTest" */;
+			buildPhases = (
+				3A4C869D1B13954F009F1D4B /* Sources */,
+				3A4C869E1B13954F009F1D4B /* Frameworks */,
+				3A4C869F1B13954F009F1D4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RussianTimeTest;
+			productName = RussianTimeTest;
+			productReference = 3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A4C86B51B13954F009F1D4B /* RussianTimeTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTestTests" */;
+			buildPhases = (
+				3A4C86B21B13954F009F1D4B /* Sources */,
+				3A4C86B31B13954F009F1D4B /* Frameworks */,
+				3A4C86B41B13954F009F1D4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A4C86B81B13954F009F1D4B /* PBXTargetDependency */,
+			);
+			name = RussianTimeTestTests;
+			productName = RussianTimeTestTests;
+			productReference = 3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A4C86991B13954F009F1D4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Anton Osten";
+				TargetAttributes = {
+					3A4C86A01B13954F009F1D4B = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = B3G495MPPY;
+					};
+					3A4C86B51B13954F009F1D4B = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 3A4C86A01B13954F009F1D4B;
+					};
+				};
+			};
+			buildConfigurationList = 3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "RussianTimeTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A4C86981B13954F009F1D4B;
+			productRefGroup = 3A4C86A21B13954F009F1D4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A4C86A01B13954F009F1D4B /* RussianTimeTest */,
+				3A4C86B51B13954F009F1D4B /* RussianTimeTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A4C869F1B13954F009F1D4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4C86AC1B13954F009F1D4B /* Main.storyboard in Resources */,
+				3A4C86B11B13954F009F1D4B /* LaunchScreen.xib in Resources */,
+				3A4C86AE1B13954F009F1D4B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4C86B41B13954F009F1D4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A4C869D1B13954F009F1D4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1FBAA11B13C14300E17C0F /* TimeTest.swift in Sources */,
+				3A4C86A91B13954F009F1D4B /* ViewController.swift in Sources */,
+				3A4C86A71B13954F009F1D4B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A4C86B21B13954F009F1D4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A4C86BD1B13954F009F1D4B /* RussianTimeTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A4C86B81B13954F009F1D4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A4C86A01B13954F009F1D4B /* RussianTimeTest */;
+			targetProxy = 3A4C86B71B13954F009F1D4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A4C86AA1B13954F009F1D4B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A4C86AB1B13954F009F1D4B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A4C86AF1B13954F009F1D4B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A4C86B01B13954F009F1D4B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A4C86BE1B13954F009F1D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A4C86BF1B13954F009F1D4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A4C86C11B13954F009F1D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = RussianTimeTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		3A4C86C21B13954F009F1D4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = RussianTimeTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		3A4C86C41B13954F009F1D4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RussianTimeTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RussianTimeTest.app/RussianTimeTest";
+			};
+			name = Debug;
+		};
+		3A4C86C51B13954F009F1D4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RussianTimeTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RussianTimeTest.app/RussianTimeTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "RussianTimeTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4C86BE1B13954F009F1D4B /* Debug */,
+				3A4C86BF1B13954F009F1D4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4C86C11B13954F009F1D4B /* Debug */,
+				3A4C86C21B13954F009F1D4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A4C86C41B13954F009F1D4B /* Debug */,
+				3A4C86C51B13954F009F1D4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A4C86991B13954F009F1D4B /* Project object */;
+}
