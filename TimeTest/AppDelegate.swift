@@ -47,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if answer == correctVerbalTime || answer == correctShortTime
         {
             populateTimeField()
+            answerField.backgroundColor = NSColor.greenColor()
             answerField.stringValue = ""
             answerField.display()
             
