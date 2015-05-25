@@ -218,8 +218,18 @@ func minutesToText(minutes: Int) -> String!
         let ten = (String(minutesArray.first!) + "0").toInt()!
         let one = String(minutesArray.last!).toInt()!
         let tenText = verbalMinutes[ten]!
-        let oneText = verbalMinutes[one]!
-        return "\(tenText) \(oneText)"
+        
+        // for numbers that are x1
+        if let oneText = verbalMinutes[one]
+        {
+            return "\(tenText) \(oneText)"
+        }
+        // for numbers that are x0
+        else
+        {
+            return "\(tenText)"
+        }
+        
     }
 }
 
@@ -270,14 +280,21 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     // it's less than half past
     if time.minutes < 30
     {
-        // change the case
-        let textMinutes = minutesToText(time.minutes)
-        let minutesNoun = casifyMinute(time.minutes, NOMINATIVE)
-        result = "\(textMinutes) \(minutesNoun!) \(textHour!)"
-        
+        if time.minutes == 15 && short
+        {
+            textMinutes = "четверть"
+            result = "\(textMinutes) \(textHour!)"
+        }
+        else
+        {
+            // change the case
+            textMinutes = minutesToText(time.minutes)
+            let minutesNoun = casifyMinute(time.minutes, NOMINATIVE)
+            result = "\(textMinutes) \(minutesNoun!) \(textHour!)"
+        }
     }
         
-        // it's half past
+    // it's half past
     else if time.minutes == 30
     {
         var textHour = possessiveNumsExceptions[time.nextHour]
@@ -300,32 +317,43 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     // it's over half past
     else
     {
+        var casedTextMinutes: String
         let minutesLeft = 60 - time.minutes
-        var textMinutes = minutesToText(minutesLeft)
-        var casedTextMinutes = ""
-        let splitstring = split(textMinutes, allowEmptySlices: false, isSeparator: {$0 == " "})
         
-        for (n, word) in enumerate(splitstring)
+        // special case for a quarter and short form
+        if minutesLeft == 15 && short
         {
-            var casedNum: String
+            casedTextMinutes = "четверти"
+        }
+        else
+        {
+            casedTextMinutes = ""
+            textMinutes = minutesToText(minutesLeft)
+            let splitstring = split(textMinutes, allowEmptySlices: false, isSeparator: {$0 == " "})
             
-            if let exception = genitiveExceptions[word]
+            // put the numeral of minutes in the correct (genitive) case
+            for (n, word) in enumerate(splitstring)
             {
-                casedNum = exception
-            }
-            else
-            {
-                casedNum = changeEnding(word, "и")
-            }
-            
-            casedTextMinutes += casedNum
-            if n + 1 < count(splitstring)
-            {
-                casedTextMinutes += " "
+                var casedNum: String
+                
+                if let exception = genitiveExceptions[word]
+                {
+                    casedNum = exception
+                }
+                else
+                {
+                    casedNum = changeEnding(word, "и")
+                }
+                
+                casedTextMinutes += casedNum
+                if n + 1 < count(splitstring)
+                {
+                    casedTextMinutes += " "
+                }
             }
         }
         
-        // short form vs long
+        // short form
         if short
         {
             result = "без \(casedTextMinutes) \(textHour)"
@@ -335,8 +363,6 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
             let minutesNoun = casifyMinute(minutesLeft, GENITIVE_FEM)!
             result = "без \(casedTextMinutes) \(minutesNoun) \(textHour)"
         }
-        
-        
     }
     
     return result
