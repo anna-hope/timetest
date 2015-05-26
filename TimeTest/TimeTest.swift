@@ -47,24 +47,24 @@ public class TimeInstance
     }
     
     public var nextHour: Int
+    {
+        if self.hours == 12
         {
-            if self.hours == 12
-            {
-                return 1
-            }
-            else
-            {
-                return self.hours + 1
-            }
+            return 1
+        }
+        else
+        {
+            return self.hours + 1
+        }
     }
     
     public var toDateComponents: NSDateComponents
-        {
-            var components = NSDateComponents()
-            components.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-            components.hour = self.hours
-            components.minute = self.minutes
-            return components
+    {
+        let components = NSDateComponents()
+        components.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        components.hour = self.hours
+        components.minute = self.minutes
+        return components
     }
 }
 
@@ -93,6 +93,9 @@ public let verbalMinutes = [1: "одна",
     50: "пятьдесят"]
 var reverseVerbalTimes = [String: Int]()
 
+let verbalHourExceptions = [1: "час",
+                            2: "два"]
+
 let genitiveExceptions = ["одна": "одной",
     "две": "двух",
     "три": "трёх",
@@ -112,8 +115,8 @@ let possessiveNumsExceptions = [1: "первого",
 func getTime() -> TimeInstance
 {
     let hours = arc4random_uniform(12) + 1
-    var minutes: Int!
-    let partOfTheClock = arc4random_uniform(3)
+    let minutes: Int
+    let partOfTheClock = arc4random_uniform(4)
     
     switch partOfTheClock
     {
@@ -123,7 +126,9 @@ func getTime() -> TimeInstance
         minutes = 30
     case 2:
         minutes =  60 - Int(arc4random_uniform(30))
-    default: ()
+    default:
+        // on the hour
+        minutes = 0
     }
     
     let time = TimeInstance(hours: Int(hours), minutes: minutes)
@@ -253,7 +258,20 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     var textHour: String
     var textMinutes: String
     
-    if time.minutes <= 30
+    
+    if time.minutes == 0
+    {
+        // improve later?
+        if let hourString = verbalHourExceptions[time.hours]
+        {
+            textHour = hourString
+        }
+        else
+        {
+            textHour = verbalMinutes[time.hours]!
+        }
+    }
+    else if time.minutes <= 30
     {
         if let hourString = possessiveNumsExceptions[time.nextHour]
         {
@@ -266,13 +284,9 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     }
     else
     {
-        if time.nextHour == 1
+        if let hourString = verbalHourExceptions[time.nextHour]
         {
-            textHour = "час"
-        }
-        else if time.nextHour == 2
-        {
-            textHour = "два"
+            textHour = hourString
         }
         else
         {
@@ -280,8 +294,8 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
         }
     }
     
-    // it's less than half past
-    if time.minutes < 30
+    // it's less than half past (but not the hour)
+    if time.minutes < 30 && time.minutes != 0
     {
         if time.minutes == 15 && short
         {
@@ -311,7 +325,7 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     }
         
     // it's over half past
-    else
+    else if time.minutes > 30
     {
         var casedTextMinutes: String
         let minutesLeft = 60 - time.minutes
@@ -358,6 +372,19 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
         {
             let minutesNoun = casifyMinute(minutesLeft, GENITIVE_FEM)!
             result = "без \(casedTextMinutes) \(minutesNoun) \(textHour)"
+        }
+    }
+        
+    // it's on the hour
+    else
+    {
+        if short
+        {
+            result = textHour
+        }
+        else
+        {
+            result = "\(textHour) часов"
         }
     }
     
