@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3A42F07C1B112E3600CCC6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42F07B1B112E3600CCC6DC /* AppDelegate.swift */; };
-		3A42F07E1B112E3600CCC6DC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A42F07D1B112E3600CCC6DC /* Images.xcassets */; };
 		3A42F0811B112E3600CCC6DC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A42F07F1B112E3600CCC6DC /* MainMenu.xib */; };
 		3A42F08D1B112E3700CCC6DC /* TimeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42F08C1B112E3700CCC6DC /* TimeTestTests.swift */; };
 		3A42F0971B112F5D00CCC6DC /* TimeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A42F0961B112F5D00CCC6DC /* TimeTest.swift */; };
+		3A5E7D0C1B13F1EA00705CCB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E7D0B1B13F1EA00705CCB /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,34 +22,20 @@
 			remoteGlobalIDString = 3A42F0751B112E3600CCC6DC;
 			remoteInfo = TimeTest;
 		};
-		3A4C86CB1B139550009F1D4B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A4C86A11B13954F009F1D4B;
-			remoteInfo = RussianTimeTest;
-		};
-		3A4C86CD1B139550009F1D4B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A4C86B61B13954F009F1D4B;
-			remoteInfo = RussianTimeTestTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A42F0761B112E3600CCC6DC /* TimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A42F07A1B112E3600CCC6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A42F07B1B112E3600CCC6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A42F07D1B112E3600CCC6DC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A42F0801B112E3600CCC6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3A42F0861B112E3700CCC6DC /* TimeTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A42F08B1B112E3700CCC6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A42F08C1B112E3700CCC6DC /* TimeTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTestTests.swift; sourceTree = "<group>"; };
 		3A42F0961B112F5D00CCC6DC /* TimeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTest.swift; sourceTree = "<group>"; };
 		3A4C86951B1389CC009F1D4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
-		3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RussianTimeTest.xcodeproj; path = RussianTimeTest/RussianTimeTest.xcodeproj; sourceTree = "<group>"; };
+		3A4C86C61B13954F009F1D4B /* Russian Time.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Russian Time.xcodeproj"; path = "RussianTimeTest/Russian Time.xcodeproj"; sourceTree = "<group>"; };
+		3A5E7D0B1B13F1EA00705CCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		3A791D181B1279E6002DAE7D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,10 +79,10 @@
 		3A42F0781B112E3600CCC6DC /* TimeTest */ = {
 			isa = PBXGroup;
 			children = (
-				3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */,
+				3A4C86C61B13954F009F1D4B /* Russian Time.xcodeproj */,
 				3A42F07B1B112E3600CCC6DC /* AppDelegate.swift */,
 				3A42F0961B112F5D00CCC6DC /* TimeTest.swift */,
-				3A42F07D1B112E3600CCC6DC /* Images.xcassets */,
+				3A5E7D0B1B13F1EA00705CCB /* Images.xcassets */,
 				3A42F07F1B112E3600CCC6DC /* MainMenu.xib */,
 				3A42F0791B112E3600CCC6DC /* Supporting Files */,
 			);
@@ -126,15 +112,6 @@
 				3A42F08B1B112E3700CCC6DC /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3A4C86C71B13954F009F1D4B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A4C86CC1B139550009F1D4B /* RussianTimeTest.app */,
-				3A4C86CE1B139550009F1D4B /* RussianTimeTestTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,12 +181,6 @@
 			mainGroup = 3A42F06D1B112E3600CCC6DC;
 			productRefGroup = 3A42F0771B112E3600CCC6DC /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 3A4C86C71B13954F009F1D4B /* Products */;
-					ProjectRef = 3A4C86C61B13954F009F1D4B /* RussianTimeTest.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				3A42F0751B112E3600CCC6DC /* TimeTest */,
@@ -218,29 +189,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		3A4C86CC1B139550009F1D4B /* RussianTimeTest.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RussianTimeTest.app;
-			remoteRef = 3A4C86CB1B139550009F1D4B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A4C86CE1B139550009F1D4B /* RussianTimeTestTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RussianTimeTestTests.xctest;
-			remoteRef = 3A4C86CD1B139550009F1D4B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		3A42F0741B112E3600CCC6DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A42F07E1B112E3600CCC6DC /* Images.xcassets in Resources */,
+				3A5E7D0C1B13F1EA00705CCB /* Images.xcassets in Resources */,
 				3A42F0811B112E3600CCC6DC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +332,6 @@
 		3A42F0911B112E3700CCC6DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -389,7 +342,6 @@
 		3A42F0921B112E3700CCC6DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

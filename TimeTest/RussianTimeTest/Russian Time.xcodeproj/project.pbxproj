@@ -11,9 +11,9 @@
 		3A4C86A71B13954F009F1D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86A61B13954F009F1D4B /* AppDelegate.swift */; };
 		3A4C86A91B13954F009F1D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86A81B13954F009F1D4B /* ViewController.swift */; };
 		3A4C86AC1B13954F009F1D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AA1B13954F009F1D4B /* Main.storyboard */; };
-		3A4C86AE1B13954F009F1D4B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AD1B13954F009F1D4B /* Images.xcassets */; };
 		3A4C86B11B13954F009F1D4B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4C86AF1B13954F009F1D4B /* LaunchScreen.xib */; };
 		3A4C86BD1B13954F009F1D4B /* RussianTimeTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C86BC1B13954F009F1D4B /* RussianTimeTestTests.swift */; };
+		3AFF22C01B13EFE900A93499 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFF22BF1B13EFE900A93499 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,16 +28,16 @@
 
 /* Begin PBXFileReference section */
 		3A1FBAA01B13C14300E17C0F /* TimeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeTest.swift; path = ../../TimeTest.swift; sourceTree = "<group>"; };
-		3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RussianTimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4C86A11B13954F009F1D4B /* Russian Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Russian Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4C86A51B13954F009F1D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4C86A61B13954F009F1D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4C86A81B13954F009F1D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A4C86AB1B13954F009F1D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A4C86AD1B13954F009F1D4B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3A4C86B01B13954F009F1D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RussianTimeTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4C86B61B13954F009F1D4B /* Russian TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Russian TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4C86BB1B13954F009F1D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4C86BC1B13954F009F1D4B /* RussianTimeTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RussianTimeTestTests.swift; sourceTree = "<group>"; };
+		3AFF22BF1B13EFE900A93499 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 		3A4C86A21B13954F009F1D4B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */,
-				3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */,
+				3A4C86A11B13954F009F1D4B /* Russian Time.app */,
+				3A4C86B61B13954F009F1D4B /* Russian TimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +83,8 @@
 				3A4C86A81B13954F009F1D4B /* ViewController.swift */,
 				3A1FBAA01B13C14300E17C0F /* TimeTest.swift */,
 				3A4C86AA1B13954F009F1D4B /* Main.storyboard */,
-				3A4C86AD1B13954F009F1D4B /* Images.xcassets */,
 				3A4C86AF1B13954F009F1D4B /* LaunchScreen.xib */,
+				3AFF22BF1B13EFE900A93499 /* Images.xcassets */,
 				3A4C86A41B13954F009F1D4B /* Supporting Files */,
 			);
 			path = RussianTimeTest;
@@ -118,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A4C86A01B13954F009F1D4B /* RussianTimeTest */ = {
+		3A4C86A01B13954F009F1D4B /* Russian Time */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTest" */;
+			buildConfigurationList = 3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "Russian Time" */;
 			buildPhases = (
 				3A4C869D1B13954F009F1D4B /* Sources */,
 				3A4C869E1B13954F009F1D4B /* Frameworks */,
@@ -130,14 +130,14 @@
 			);
 			dependencies = (
 			);
-			name = RussianTimeTest;
+			name = "Russian Time";
 			productName = RussianTimeTest;
-			productReference = 3A4C86A11B13954F009F1D4B /* RussianTimeTest.app */;
+			productReference = 3A4C86A11B13954F009F1D4B /* Russian Time.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A4C86B51B13954F009F1D4B /* RussianTimeTestTests */ = {
+		3A4C86B51B13954F009F1D4B /* Russian TimeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTestTests" */;
+			buildConfigurationList = 3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "Russian TimeTests" */;
 			buildPhases = (
 				3A4C86B21B13954F009F1D4B /* Sources */,
 				3A4C86B31B13954F009F1D4B /* Frameworks */,
@@ -148,9 +148,9 @@
 			dependencies = (
 				3A4C86B81B13954F009F1D4B /* PBXTargetDependency */,
 			);
-			name = RussianTimeTestTests;
+			name = "Russian TimeTests";
 			productName = RussianTimeTestTests;
-			productReference = 3A4C86B61B13954F009F1D4B /* RussianTimeTestTests.xctest */;
+			productReference = 3A4C86B61B13954F009F1D4B /* Russian TimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "RussianTimeTest" */;
+			buildConfigurationList = 3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "Russian Time" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -185,8 +185,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A4C86A01B13954F009F1D4B /* RussianTimeTest */,
-				3A4C86B51B13954F009F1D4B /* RussianTimeTestTests */,
+				3A4C86A01B13954F009F1D4B /* Russian Time */,
+				3A4C86B51B13954F009F1D4B /* Russian TimeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -196,9 +196,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFF22C01B13EFE900A93499 /* Images.xcassets in Resources */,
 				3A4C86AC1B13954F009F1D4B /* Main.storyboard in Resources */,
 				3A4C86B11B13954F009F1D4B /* LaunchScreen.xib in Resources */,
-				3A4C86AE1B13954F009F1D4B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +235,7 @@
 /* Begin PBXTargetDependency section */
 		3A4C86B81B13954F009F1D4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A4C86A01B13954F009F1D4B /* RussianTimeTest */;
+			target = 3A4C86A01B13954F009F1D4B /* Russian Time */;
 			targetProxy = 3A4C86B71B13954F009F1D4B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -345,11 +345,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RussianTimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Russian Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -358,11 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RussianTimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Russian Time";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -381,7 +383,7 @@
 				);
 				INFOPLIST_FILE = RussianTimeTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Russian TimeTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RussianTimeTest.app/RussianTimeTest";
 			};
 			name = Debug;
@@ -396,7 +398,7 @@
 				);
 				INFOPLIST_FILE = RussianTimeTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Russian TimeTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RussianTimeTest.app/RussianTimeTest";
 			};
 			name = Release;
@@ -404,7 +406,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "RussianTimeTest" */ = {
+		3A4C869C1B13954F009F1D4B /* Build configuration list for PBXProject "Russian Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A4C86BE1B13954F009F1D4B /* Debug */,
@@ -413,7 +415,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTest" */ = {
+		3A4C86C01B13954F009F1D4B /* Build configuration list for PBXNativeTarget "Russian Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A4C86C11B13954F009F1D4B /* Debug */,
@@ -422,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "RussianTimeTestTests" */ = {
+		3A4C86C31B13954F009F1D4B /* Build configuration list for PBXNativeTarget "Russian TimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A4C86C41B13954F009F1D4B /* Debug */,
