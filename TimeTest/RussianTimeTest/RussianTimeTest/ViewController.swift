@@ -16,8 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var countLabel: UILabel!
     var answerCount = 0
-    var timer: NSTimer!
-    
 
     override func viewDidLoad()
     {
@@ -56,16 +54,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
-            answerField.textColor = UIColor.redColor()
+            answerField.backgroundColor = UIColor.redColor()
         }
     }
     
     func moveOn()
     {
-//        self.timer = NSTimer(timeInterval: 1.0, target: self,
-//                            selector: "changeColour:", userInfo: nil,
-//                            repeats: false)
-        answerField.backgroundColor = UIColor.greenColor()
+        answerField.backgroundColor = UIColor.whiteColor()
         answerField.text = ""
         populateTimeField()
         
@@ -78,11 +73,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let answer = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         checkTime(answer)
         return true
-    }
-    
-    func changeColour()
-    {
-        answerField.backgroundColor = UIColor.whiteColor()
     }
 
     @IBAction func seeTime(sender: AnyObject)
