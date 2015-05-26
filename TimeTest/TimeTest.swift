@@ -111,18 +111,18 @@ let possessiveNumsExceptions = [1: "первого",
 
 func getTime() -> TimeInstance
 {
-    let hours = arc4random_uniform(11) + 1
+    let hours = arc4random_uniform(12) + 1
     var minutes: Int!
-    let partOfTheClock = arc4random_uniform(2)
+    let partOfTheClock = arc4random_uniform(3)
     
     switch partOfTheClock
     {
     case 0:
-        minutes = Int(arc4random_uniform(29)) + 1
+        minutes = Int(arc4random_uniform(30)) + 1
     case 1:
         minutes = 30
     case 2:
-        minutes =  60 - (Int(arc4random_uniform(29)) + 1)
+        minutes =  60 - Int(arc4random_uniform(30))
     default: ()
     }
     
@@ -249,14 +249,17 @@ public func changeEnding(text: String, ending: String) -> String
 
 public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
 {
-    var result: String
-    var textHour: String?
+    let result: String
+    var textHour: String
     var textMinutes: String
     
     if time.minutes <= 30
     {
-        textHour = possessiveNumsExceptions[time.nextHour]
-        if textHour == nil
+        if let hourString = possessiveNumsExceptions[time.nextHour]
+        {
+            textHour = hourString
+        }
+        else
         {
             textHour = changeEnding(verbalMinutes[time.nextHour]!, "ого")
         }
@@ -283,34 +286,27 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
         if time.minutes == 15 && short
         {
             textMinutes = "четверть"
-            result = "\(textMinutes) \(textHour!)"
+            result = "\(textMinutes) \(textHour)"
         }
         else
         {
             // change the case
             textMinutes = minutesToText(time.minutes)
             let minutesNoun = casifyMinute(time.minutes, NOMINATIVE)
-            result = "\(textMinutes) \(minutesNoun!) \(textHour!)"
+            result = "\(textMinutes) \(minutesNoun!) \(textHour)"
         }
     }
         
     // it's half past
     else if time.minutes == 30
     {
-        var textHour = possessiveNumsExceptions[time.nextHour]
-        
-        if textHour == nil
-        {
-            textHour = changeEnding(verbalMinutes[time.nextHour]!, "ого")
-        }
-        
         if short
         {
-            result = "пол\(textHour!)"
+            result = "пол\(textHour)"
         }
         else
         {
-            result = "половина \(textHour!)"
+            result = "половина \(textHour)"
         }
     }
         
