@@ -15,6 +15,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A1365761B1409B900753E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A4C86C61B13954F009F1D4B /* Russian Time.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A4C86A11B13954F009F1D4B;
+			remoteInfo = "Russian Time";
+		};
+		3A1365781B1409B900753E65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A4C86C61B13954F009F1D4B /* Russian Time.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A4C86B61B13954F009F1D4B;
+			remoteInfo = "Russian TimeTests";
+		};
 		3A42F0871B112E3700CCC6DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A42F06E1B112E3600CCC6DC /* Project object */;
@@ -57,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1365721B1409B900753E65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A1365771B1409B900753E65 /* Russian Time.app */,
+				3A1365791B1409B900753E65 /* Russian TimeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3A42F06D1B112E3600CCC6DC = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +204,12 @@
 			mainGroup = 3A42F06D1B112E3600CCC6DC;
 			productRefGroup = 3A42F0771B112E3600CCC6DC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3A1365721B1409B900753E65 /* Products */;
+					ProjectRef = 3A4C86C61B13954F009F1D4B /* Russian Time.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3A42F0751B112E3600CCC6DC /* TimeTest */,
@@ -188,6 +217,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3A1365771B1409B900753E65 /* Russian Time.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Russian Time.app";
+			remoteRef = 3A1365761B1409B900753E65 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A1365791B1409B900753E65 /* Russian TimeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Russian TimeTests.xctest";
+			remoteRef = 3A1365781B1409B900753E65 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3A42F0741B112E3600CCC6DC /* Resources */ = {
