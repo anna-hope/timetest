@@ -32,7 +32,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func populateTimeField()
     {
         let time = getTime()
-        timeField.stringValue = timeFormatter.stringForObjectValue(time.toDateComponents)!
+        
+        let timeString = timeFormatter.stringForObjectValue(time.toDateComponents)!
+        // make sure it's not the same as the old value
+        while timeString == timeField.stringValue
+        {
+            return populateTimeField()
+        }
+        timeField.stringValue = timeString
     }
     
     func moveOn()
@@ -49,36 +56,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func checkTime(sender: AnyObject)
     {
-        let answer = answerField.stringValue
-        
+        // remove possible ё's from the answer
+        let answer = deyottaize(answerField.stringValue)
         let time = TimeInstance(timeString: timeField.stringValue)
-        let correctVerbalTime = verbaliseTime(time)
+        let correctTimes = verbaliseTime(time)
         
-        if answer == correctVerbalTime
+        for verbalTime in correctTimes
         {
-           moveOn()
+            if answer == deyottaize(verbalTime)
+            {
+                return moveOn()
+            }
         }
-        else if answer == verbaliseTime(time, short: true)
-        {
-            moveOn()
-        }
-        else
-        {
-            answerField.backgroundColor = NSColor.redColor()
-        }
+        
+        answerField.backgroundColor = NSColor.redColor()
         
     }
     
     @IBAction func seeTime(sender: AnyObject)
     {
         let time = TimeInstance(timeString: timeField.stringValue)
-        let correctVerbalTime = verbaliseTime(time)
-        let correctShortTime = verbaliseTime(time, short: true)
+        let correctTimes = verbaliseTime(time)
         
-        var message = correctVerbalTime
-        if correctVerbalTime != correctShortTime
+        var message = ""
+        for (n, verbalTime) in enumerate(correctTimes)
         {
-            message += " или \(correctShortTime)"
+            if n == 0
+            {
+                message = verbalTime
+            }
+            else
+            {
+                message += "\n\(verbalTime)"
+            }
         }
         
         let tipAlert = NSAlert()

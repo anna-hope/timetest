@@ -8,8 +8,12 @@
 
 import Foundation
 
-let NOMINATIVE = "nominative"
+let NOMINATIVE_FEM = "NOMINATIVE_FEM_fem"
+let NOMINATIVE_MASC = "NOMINATIVE_masc"
 let GENITIVE_FEM = "genitive_fem"
+
+let minuteWord = "минута"
+let hourWord = "час"
 
 
 public class TimeInstance
@@ -28,24 +32,28 @@ public class TimeInstance
         self.init(hours: components.hour, minutes: components.minute)
     }
     
+    convenience public init(fromDate date: NSDate)
+    {
+        // turn the date into date components
+        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let components = calendar.components((NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute),
+            fromDate: date)
+        
+        // get the hours and the minutes and initialise self
+        let hours = components.hour
+        let minutes = components.minute
+        self.init(hours: hours, minutes: minutes)
+    }
+    
     convenience public init(timeString: String)
     {
         // turn the string into a date
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "hh:mm"
         let date = dateFormatter.dateFromString(timeString)!
-        
-        // turn the date into date components
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let components = calendar.components((NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute),
-                                    fromDate: date)
-        
-        // get the hours and the minutes and initialise self
-        let hours = components.hour
-        let minutes = components.minute
-        self.init(hours: hours, minutes: minutes)        
+        self.init(fromDate: date)
     }
-    
+
     public var nextHour: Int
     {
         if self.hours == 12
@@ -96,14 +104,14 @@ var reverseVerbalTimes = [String: Int]()
 let verbalHourExceptions = [1: "час",
                             2: "два"]
 
-let genitiveExceptions = ["одна": "одной",
+let genitiveFemExceptions = ["одна": "одной",
     "две": "двух",
     "три": "трёх",
     "четыре": "четырёх",
     "восемь": "восьми",
     "сорок": "сорока",
     "пятьдесят": "пятидесяти"]
-var reverseGenitiveExceptions = [String: String]()
+var reverseGenitiveFemExceptions = [String: String]()
 
 let possessiveNumsExceptions = [1: "первого",
     2: "второго",
@@ -116,7 +124,7 @@ func getTime() -> TimeInstance
 {
     let hours = arc4random_uniform(12) + 1
     let minutes: Int
-    let partOfTheClock = arc4random_uniform(4)
+    let partOfTheClock = arc4random_uniform(5)
     
     switch partOfTheClock
     {
@@ -126,9 +134,19 @@ func getTime() -> TimeInstance
         minutes = 30
     case 2:
         minutes =  60 - Int(arc4random_uniform(30))
-    default:
+    case 3:
         // on the hour
         minutes = 0
+    default:
+        // current time
+        let timeNow = NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        dateFormatter.dateFormat = "hh:mm"
+        // force 12 hour time
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        let timeString = dateFormatter.stringFromDate(timeNow)
+        return TimeInstance(timeString: timeString)
     }
     
     let time = TimeInstance(hours: Int(hours), minutes: minutes)
@@ -136,27 +154,45 @@ func getTime() -> TimeInstance
 }
 
 
-func casifyMinute(num: Int, nounCase: String) -> String?
+func casify(noun: String, num: Int, nounCase: String) -> String?
 {
     let numArray = Array(String(num))
     let lastNum = String(numArray.last!).toInt()
+
     
     switch nounCase
     {
-    case NOMINATIVE:
+    case NOMINATIVE_MASC, NOMINATIVE_FEM:
         
         // numbers that end in 1 act like 1 (apart from 11)
         if lastNum == 1 && num != 11
         {
-            return "минута"
+            return noun
         }
         else if (lastNum > 1 && lastNum < 5) && !(num > 10 && num < 20)
         {
-            return "минуты"
+            if nounCase == NOMINATIVE_FEM
+            {
+                return changeEnding(noun, "ы")
+            }
+            else
+            {
+                // yep
+                return noun + "а"
+            }
         }
         else
         {
-            return "минут"
+            if nounCase == NOMINATIVE_FEM
+            {
+                // chop off the ending
+                return noun.substringToIndex(noun.endIndex.predecessor())
+            }
+            else
+            {
+                // masculine
+                return noun + "ов"
+            }
         }
     case GENITIVE_FEM:
         if lastNum == 1 && num != 11
@@ -175,19 +211,18 @@ func casifyMinute(num: Int, nounCase: String) -> String?
 
 public func changeNumCase(numString: String, caseTo: String) -> String?
 {
-    let numString = deyottaize(numString)
     switch caseTo
     {
-    case NOMINATIVE:
-        if count(reverseGenitiveExceptions.keys) == 0
+    case NOMINATIVE_FEM:
+        if count(reverseGenitiveFemExceptions.keys) == 0
         {
-            for (key, value) in genitiveExceptions
+            for (key, value) in genitiveFemExceptions
             {
-                reverseGenitiveExceptions[value] = key
+                reverseGenitiveFemExceptions[value] = key
             }
         }
         
-        if let result = reverseGenitiveExceptions[numString]
+        if let result = reverseGenitiveFemExceptions[numString]
         {
             return result
         }
@@ -197,7 +232,7 @@ public func changeNumCase(numString: String, caseTo: String) -> String?
         }
         
     case GENITIVE_FEM:
-        if let result = genitiveExceptions[numString]
+        if let result = genitiveFemExceptions[numString]
         {
             return result
         }
@@ -252,9 +287,9 @@ public func changeEnding(text: String, ending: String) -> String
 }
 
 
-public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
+public func verbaliseTime(time: TimeInstance) -> [String]
 {
-    let result: String
+    var results = [String]()
     var textHour: String
     var textMinutes: String
     
@@ -297,96 +332,83 @@ public func verbaliseTime(time: TimeInstance, short: Bool = false) -> String
     // it's less than half past (but not the hour)
     if time.minutes < 30 && time.minutes != 0
     {
-        if time.minutes == 15 && short
+        if time.minutes == 15
         {
-            textMinutes = "четверть"
-            result = "\(textMinutes) \(textHour)"
+            results.append("четверть \(textHour)")
         }
-        else
-        {
-            // change the case
-            textMinutes = minutesToText(time.minutes)
-            let minutesNoun = casifyMinute(time.minutes, NOMINATIVE)
-            result = "\(textMinutes) \(minutesNoun!) \(textHour)"
-        }
+        // change the case
+        textMinutes = minutesToText(time.minutes)
+        let minutesNoun = casify(minuteWord, time.minutes, NOMINATIVE_FEM)
+        results.append("\(textMinutes) \(minutesNoun!) \(textHour)")
     }
         
     // it's half past
     else if time.minutes == 30
     {
-        if short
-        {
-            result = "пол\(textHour)"
-        }
-        else
-        {
-            result = "половина \(textHour)"
-        }
+        results.append("пол\(textHour)")
+        results.append("половина \(textHour)")
     }
         
     // it's over half past
     else if time.minutes > 30
     {
-        var casedTextMinutes: String
         let minutesLeft = 60 - time.minutes
+        var casedTextMinutes = ""
         
         // special case for a quarter and short form
-        if minutesLeft == 15 && short
+        if minutesLeft == 15
         {
-            casedTextMinutes = "четверти"
+            results.append("без четверти \(textHour)")
         }
-        else
+        
+        textMinutes = minutesToText(minutesLeft)
+        let splitstring = split(textMinutes, allowEmptySlices: false, isSeparator: {$0 == " "})
+        
+        // put the numeral of minutes in the correct (genitive) case
+        for (n, word) in enumerate(splitstring)
         {
-            casedTextMinutes = ""
-            textMinutes = minutesToText(minutesLeft)
-            let splitstring = split(textMinutes, allowEmptySlices: false, isSeparator: {$0 == " "})
+            var casedNum: String
             
-            // put the numeral of minutes in the correct (genitive) case
-            for (n, word) in enumerate(splitstring)
+            if let exception = genitiveFemExceptions[word]
             {
-                var casedNum: String
-                
-                if let exception = genitiveExceptions[word]
-                {
-                    casedNum = exception
-                }
-                else
-                {
-                    casedNum = changeEnding(word, "и")
-                }
-                
-                casedTextMinutes += casedNum
-                if n + 1 < count(splitstring)
-                {
-                    casedTextMinutes += " "
-                }
+                casedNum = exception
+            }
+            else
+            {
+                casedNum = changeEnding(word, "и")
+            }
+            
+            casedTextMinutes += casedNum
+            if n + 1 < count(splitstring)
+            {
+                casedTextMinutes += " "
             }
         }
         
         // short form
-        if short
-        {
-            result = "без \(casedTextMinutes) \(textHour)"
-        }
-        else
-        {
-            let minutesNoun = casifyMinute(minutesLeft, GENITIVE_FEM)!
-            result = "без \(casedTextMinutes) \(minutesNoun) \(textHour)"
-        }
+        results.append("без \(casedTextMinutes) \(textHour)")
+        
+        // longer form
+        let minutesNoun = casify(minuteWord, minutesLeft, GENITIVE_FEM)!
+        results.append("без \(casedTextMinutes) \(minutesNoun) \(textHour)")
     }
         
     // it's on the hour
     else
     {
-        if short
+        if time.hours == 1
         {
-            result = textHour
+            results.append(textHour)
         }
         else
         {
-            result = "\(textHour) часов"
+            // short form
+            results.append("\(textHour)")
+            // longer form
+            let hoursNoun = casify(hourWord, time.hours, NOMINATIVE_MASC)!
+            results.append("\(textHour) \(hoursNoun)")
         }
     }
     
-    return result
+    return results
 }

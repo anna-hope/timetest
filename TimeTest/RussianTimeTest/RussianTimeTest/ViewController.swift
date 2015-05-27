@@ -36,26 +36,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func populateTimeField()
     {
         let time = getTime()
-        timeLabel.text = timeFormatter.stringForObjectValue(time.toDateComponents)!
+        
+        let timeString = timeFormatter.stringForObjectValue(time.toDateComponents)!
+        if let currentValue = timeLabel.text
+        {
+            // make sure it's not the same as the old value
+            while timeString == currentValue
+            {
+                return populateTimeField()
+            }
+        }
+        timeLabel.text = timeString
     }
     
     func checkTime(answer: String)
     {
+        let answer = deyottaize(answerField.text)
         let time = TimeInstance(timeString: timeLabel.text!)
-        let correctTime = verbaliseTime(time)
+        let correctTimes = verbaliseTime(time)
         
-        if answer == correctTime
+        for verbalTime in correctTimes
         {
-            moveOn()
+            if answer == deyottaize(verbalTime)
+            {
+                return moveOn()
+            }
         }
-        else if answer == verbaliseTime(time, short: true)
-        {
-            moveOn()
-        }
-        else
-        {
-            answerField.backgroundColor = UIColor.redColor()
-        }
+        
+        answerField.backgroundColor = UIColor.redColor()
     }
     
     func moveOn()
@@ -79,13 +87,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     {
         let time = TimeInstance(timeString: timeLabel.text!)
         let correctVerbalTime = verbaliseTime(time)
-        let correctShortTime = verbaliseTime(time, short: true)
+        let correctTimes = verbaliseTime(time)
         
-        var message = correctVerbalTime
-        if correctVerbalTime != correctShortTime
+        var message = ""
+        for (n, verbalTime) in enumerate(correctTimes)
         {
-            message += " или \(correctShortTime)"
+            if n == 0
+            {
+                message = verbalTime
+            }
+            else
+            {
+                message += "\n\(verbalTime)"
+            }
         }
+
         
         let tipAlert = UIAlertController(title: "подсказка", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let defaultAction = UIAlertAction(title: "ок", style: UIAlertActionStyle.Default, handler: nil)
