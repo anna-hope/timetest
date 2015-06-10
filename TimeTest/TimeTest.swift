@@ -36,7 +36,7 @@ public class TimeInstance
     {
         // turn the date into date components
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let components = calendar.components((NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute),
+        let components = calendar.components(([NSCalendarUnit.Hour, NSCalendarUnit.Minute]),
             fromDate: date)
         
         // get the hours and the minutes and initialise self
@@ -156,8 +156,8 @@ func getTime() -> TimeInstance
 
 func casify(noun: String, num: Int, nounCase: String) -> String?
 {
-    let numArray = Array(String(num))
-    let lastNum = String(numArray.last!).toInt()
+    let numArray = Array(String(num).characters)
+    let lastNum = Int(String(numArray.last!))
 
     
     switch nounCase
@@ -173,7 +173,7 @@ func casify(noun: String, num: Int, nounCase: String) -> String?
         {
             if nounCase == NOMINATIVE_FEM
             {
-                return changeEnding(noun, "ы")
+                return changeEnding(noun, ending: "ы")
             }
             else
             {
@@ -214,7 +214,7 @@ public func changeNumCase(numString: String, caseTo: String) -> String?
     switch caseTo
     {
     case NOMINATIVE_FEM:
-        if count(reverseGenitiveFemExceptions.keys) == 0
+        if reverseGenitiveFemExceptions.keys.count == 0
         {
             for (key, value) in genitiveFemExceptions
             {
@@ -228,7 +228,7 @@ public func changeNumCase(numString: String, caseTo: String) -> String?
         }
         else
         {
-            return changeEnding(numString, "ь")
+            return changeEnding(numString, ending: "ь")
         }
         
     case GENITIVE_FEM:
@@ -238,7 +238,7 @@ public func changeNumCase(numString: String, caseTo: String) -> String?
         }
         else
         {
-            return changeEnding(numString, "и")
+            return changeEnding(numString, ending: "и")
         }
     default:
         return nil
@@ -254,9 +254,9 @@ func minutesToText(minutes: Int) -> String!
     else
     {
         let stringMinutes = minutes.description
-        let minutesArray = Array(stringMinutes)
-        let ten = (String(minutesArray.first!) + "0").toInt()!
-        let one = String(minutesArray.last!).toInt()!
+        let minutesArray = Array(stringMinutes.characters)
+        let ten = Int((String(minutesArray.first!) + "0"))!
+        let one = Int(String(minutesArray.last!))!
         let tenText = verbalMinutes[ten]!
         
         // for numbers that are x1
@@ -314,7 +314,7 @@ public func verbaliseTime(time: TimeInstance) -> [String]
         }
         else
         {
-            textHour = changeEnding(verbalMinutes[time.nextHour]!, "ого")
+            textHour = changeEnding(verbalMinutes[time.nextHour]!, ending: "ого")
         }
     }
     else
@@ -338,7 +338,7 @@ public func verbaliseTime(time: TimeInstance) -> [String]
         }
         // change the case
         textMinutes = minutesToText(time.minutes)
-        let minutesNoun = casify(minuteWord, time.minutes, NOMINATIVE_FEM)
+        let minutesNoun = casify(minuteWord, num: time.minutes, nounCase: NOMINATIVE_FEM)
         results.append("\(textMinutes) \(minutesNoun!) \(textHour)")
     }
         
@@ -362,10 +362,10 @@ public func verbaliseTime(time: TimeInstance) -> [String]
         }
         
         textMinutes = minutesToText(minutesLeft)
-        let splitstring = split(textMinutes, allowEmptySlices: false, isSeparator: {$0 == " "})
+        let splitstring = split(textMinutes.characters, allowEmptySlices: false, isSeparator: {$0 == " "}).map { String($0) }
         
         // put the numeral of minutes in the correct (genitive) case
-        for (n, word) in enumerate(splitstring)
+        for (n, word) in splitstring.enumerate()
         {
             var casedNum: String
             
@@ -375,11 +375,11 @@ public func verbaliseTime(time: TimeInstance) -> [String]
             }
             else
             {
-                casedNum = changeEnding(word, "и")
+                casedNum = changeEnding(word, ending: "и")
             }
             
             casedTextMinutes += casedNum
-            if n + 1 < count(splitstring)
+            if n + 1 < splitstring.count
             {
                 casedTextMinutes += " "
             }
@@ -389,7 +389,7 @@ public func verbaliseTime(time: TimeInstance) -> [String]
         results.append("без \(casedTextMinutes) \(textHour)")
         
         // longer form
-        let minutesNoun = casify(minuteWord, minutesLeft, GENITIVE_FEM)!
+        let minutesNoun = casify(minuteWord, num: minutesLeft, nounCase: GENITIVE_FEM)!
         results.append("без \(casedTextMinutes) \(minutesNoun) \(textHour)")
     }
         
@@ -405,7 +405,7 @@ public func verbaliseTime(time: TimeInstance) -> [String]
             // short form
             results.append("\(textHour)")
             // longer form
-            let hoursNoun = casify(hourWord, time.hours, NOMINATIVE_MASC)!
+            let hoursNoun = casify(hourWord, num: time.hours, nounCase: NOMINATIVE_MASC)!
             results.append("\(textHour) \(hoursNoun)")
         }
     }

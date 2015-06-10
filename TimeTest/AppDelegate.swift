@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let correctTimes = verbaliseTime(time)
         
         var message = ""
-        for (n, verbalTime) in enumerate(correctTimes)
+        for (n, verbalTime) in correctTimes.enumerate()
         {
             if n == 0
             {

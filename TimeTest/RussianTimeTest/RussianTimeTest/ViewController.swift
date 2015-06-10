@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func checkTime(answer: String)
     {
-        let answer = deyottaize(answerField.text)
+        let answer = deyottaize(answerField.text!)
         let time = TimeInstance(timeString: timeLabel.text!)
         let correctTimes = verbaliseTime(time)
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
-        let answer = textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        let answer = textField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         checkTime(answer)
         return true
     }
@@ -86,11 +86,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func seeTime(sender: AnyObject)
     {
         let time = TimeInstance(timeString: timeLabel.text!)
-        let correctVerbalTime = verbaliseTime(time)
         let correctTimes = verbaliseTime(time)
         
         var message = ""
-        for (n, verbalTime) in enumerate(correctTimes)
+        for (n, verbalTime) in correctTimes.enumerate()
         {
             if n == 0
             {
